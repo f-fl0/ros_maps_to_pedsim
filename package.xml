@@ -21,5 +21,7 @@
   <build_export_depend>rospy</build_export_depend>
   
   <exec_depend>rospy</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-skimage</exec_depend>
 
 </package>
