@@ -43,19 +43,19 @@ def add_waypoint(scenario, id, x, y, r):
     """Adds to a scenario a waypoint named 'id' in (x, y) with radius 'r'"""
     waypoint = xml.SubElement(scenario, 'waypoint')
     waypoint.set('id', str(id))
-    waypoint.set('x', str(x))
-    waypoint.set('y', str(y))
-    waypoint.set('r', str(r))
+    waypoint.set('x', f'{x:.3f}')
+    waypoint.set('y', f'{y:.3f}')
+    waypoint.set('r', f'{r:.3f}')
 
 
 def add_agent(scenario, x, y, waypoints, n=2, dx=0.5, dy=0.5, type=1):
     """Adds to a scenario n agents going from (x, y) through the waypoints"""
     agent = xml.SubElement(scenario, 'agent')
-    agent.set('x', str(x))
-    agent.set('y', str(y))
+    agent.set('x', f'{x:.3f}')
+    agent.set('y', f'{y:.3f}')
     agent.set('n', str(n))
-    agent.set('dx', str(dx))
-    agent.set('dy', str(dy))
+    agent.set('dx', f'{dx:.3f}')
+    agent.set('dy', f'{dy:.3f}')
     agent.set('type', str(type))
     for id in waypoints:
         addwaypoint = xml.SubElement(agent, 'addwaypoint')
@@ -83,10 +83,10 @@ def add_waypoints_and_agent(scenario, agents_info):
 def add_obstacle(scenario, x1, y1, x2, y2):
     """Adds to a scenario an obstacle going from (x1, y1) to (x2, y2)"""
     obstacle = xml.SubElement(scenario, 'obstacle')
-    obstacle.set('x1', str(x1))
-    obstacle.set('y1', str(y1))
-    obstacle.set('x2', str(x2))
-    obstacle.set('y2', str(y2))
+    obstacle.set('x1', f'{x1:.3f}')
+    obstacle.set('y1', f'{y1:.3f}')
+    obstacle.set('x2', f'{x2:.3f}')
+    obstacle.set('y2', f'{y2:.3f}')
 
 
 def add_pixel_obstacle(scenario, x, y, resolution):
